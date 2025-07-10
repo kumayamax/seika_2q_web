@@ -150,12 +150,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // 悬停 h2 时，依次延迟触发每个字母的弹跳+颜色渐变
     h2.addEventListener('mouseenter', () => {
-      let steps = 36;
-      let duration = 650;
+      let steps = 48; // 步数更多，动画更平滑
+      let duration = 630; // 动画更慢
       let stepTime = duration / steps;
-      // 生成本次动画的统一随机色
-      const colorIdx = Math.floor(Math.random() * colorStops.length);
-      const [r, g, b] = colorStops[colorIdx];
       spans.forEach((span, i) => {
         setTimeout(() => {
           let current = 0;
@@ -168,11 +165,12 @@ window.addEventListener('DOMContentLoaded', function() {
               setTimeout(animate, stepTime);
             } else {
               span.style.opacity = 1;
+              const [r, g, b] = colorStops[Math.floor(Math.random() * colorStops.length)];
               span.style.color = `rgb(${r},${g},${b})`;
             }
           }
           animate();
-        }, i * 40);
+        }, i * 40); // 波浪延迟
       });
     });
 
