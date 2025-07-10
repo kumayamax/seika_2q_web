@@ -1,0 +1,204 @@
+@font-face {
+  font-family: 'A-OTF-KyokaICAPro-Regular';
+  src: url('./assets/font/A-OTF-KyokaICAPro-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'A-OTF-KyokaICAPro-Regular', "微软雅黑", "Arial", sans-serif;
+  margin: 0;
+  background: #f0f0f0;
+}
+
+@font-face {
+	font-family: '851';
+	src: url('./assets/font/851マカポップ.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+    }
+    
+    .section h1,
+    .section h2 {
+	font-family: '851', "微软雅黑", "Arial", sans-serif;
+    }
+
+.section {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 2em;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
+  padding: 0 10vw;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+.section::after,
+.section:last-of-type::after {
+  display: none;
+}
+.section > * {
+  position: relative;
+  z-index: 2;
+}
+.section.left {
+  align-items: flex-start;
+  text-align: left;
+}
+.section.right {
+  align-items: flex-end;
+  text-align: right;
+}
+.section h1 {
+  opacity: 0.7;
+  transform: scale(1) translateY(0);
+  transition: none;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+.section h2 {
+	font-size: 1.2em;
+	margin-bottom: 0.5em;
+	font-weight: normal;
+    }
+
+.section p {
+  font-family: 'A-OTF-KyokaICAPro-Regular', "微软雅黑", "Arial", sans-serif;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7), 0 0px 2px #fff;
+  background: rgba(0,0,0,0.25);
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: 0.7em;
+  font-size: 0.5em;
+  line-height: 1.6;
+  max-width: 900px;
+  white-space: pre-line;
+}
+#art {
+  position: relative;
+  background: url('./assets/ART.jpg') center/cover no-repeat;
+}
+#design { background: url('./assets/DESIGN.jpg') center/cover no-repeat; }
+#humanities { background: url('./assets/HUMANITIES.jpg') center/cover no-repeat; }
+#manga { background: url('./assets/MANGA.jpg') center/cover no-repeat; }
+#media { background: url('./assets/MEDIA.jpg') center/cover no-repeat; }
+
+.section#art h1, .section#art h2 {
+  background: linear-gradient(90deg, #1d16f8, #13bbf3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section#design h1, .section#design h2 {
+  background: linear-gradient(90deg, #ff69b4, #ffb347);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section#humanities h1, .section#humanities h2 {
+  background: linear-gradient(90deg, #29bb6b, #14ffa5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section#manga h1, .section#manga h2 {
+  background: linear-gradient(90deg, #ff8800, #e7d25f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section#media h1, .section#media h2 {
+  background: linear-gradient(90deg, #ff4500, #ff6347);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 去除 h2 渐变字，保证波浪动画可见 */
+.section#art h2,
+.section#design h2,
+.section#humanities h2,
+.section#manga h2,
+.section#media h2 {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  color: #fff !important;
+}
+
+.section.left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, transparent 50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.section.right::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.5) 0%, transparent 50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+.bloc-logo {
+    position: fixed;
+    top:0vw;
+    transform: translateY(-50%);
+    width: 150px;
+    height: 50px;
+    z-index: 1000;
+    pointer-events: none;
+}
+.bloc-logo canvas,
+.bloc-logo .logo-mask {
+    display: block;
+    width: 150px;
+    height: 50px;
+}
+.bloc-logo .logo-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: 150px 50px;
+    background-image: url('./img/精華.png');
+    text-indent: -9999px;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+a > h1 {
+  text-decoration: none;
+}
+a:link, a:visited {
+  text-decoration: none;
+}
+
+.wave-letter {
+  opacity: 1 !important;
+  display: inline-block !important;
+  visibility: visible !important;
+}

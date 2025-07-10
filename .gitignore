@@ -1,0 +1,13 @@
+# Node.js/前端プロジェクト用 .gitignore
+node_modules/
+dist/
+.DS_Store
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.env
+*.local
+.cache/
+.idea/
+.vscode/
+*.log 
