@@ -1,12 +1,7 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
-import webpack from 'webpack';
+const path = require('path');
+const webpack = require('webpack');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-export default {
-  watch: true,
+module.exports = {
   devtool: 'inline-source-map',
   module: {
     rules: [
