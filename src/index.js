@@ -50,16 +50,6 @@ $(document).ready(function() {
     });
   });
 
-  const blocLogo = document.querySelector('.bloc-logo');
-  if (blocLogo) {
-    VanillaTilt.init(blocLogo, {
-      scale: 1.08,
-      speed: 500,
-      max: 25,
-      glare: true,
-      'max-glare': 0.18
-    });
-  }
 });
 
 
