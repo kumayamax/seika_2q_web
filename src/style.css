@@ -93,6 +93,96 @@ body {
   position: relative;
   background: url('./assets/ART.jpg') center/cover no-repeat;
 }
+.vertical-art {
+    position: absolute;
+    top: 20%;
+    right: 12%;
+    transform: translateY(-50%);
+    font-size: 150px;
+    font-family: ab-kotodama-l, sans-serif;
+    color: #fff;
+    letter-spacing: 0.2em;
+    line-height: 1.1;
+    opacity: 0.8;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    user-select: none;
+    pointer-events: none;
+    transition: opacity 0.3s, right 0.3s;
+    z-index: 2;
+}
+.vertical-design {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  transform: translateY(-50%);
+  font-size: 150px;
+  font-family: ab-kotodama-l, sans-serif;
+  color: #fff;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  opacity: 0.8;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  user-select: none;
+  pointer-events: none;
+  transition: opacity 0.3s, right 0.3s;
+  z-index: 2;
+}
+.vertical-humanities {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  transform: translateY(-50%);
+  font-size: 150px;
+  font-family: ab-kotodama-l, sans-serif;
+  color: #fff;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  opacity: 0.8;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  user-select: none;
+  pointer-events: none;
+  transition: opacity 0.3s, right 0.3s;
+  z-index: 2;
+}
+.vertical-manga {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  transform: translateY(-50%);
+  font-size: 150px;
+  font-family: ab-kotodama-l, sans-serif;
+  color: #fff;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  opacity: 0.8;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  user-select: none;
+  pointer-events: none;
+  transition: opacity 0.3s, right 0.3s;
+  z-index: 2;
+}
+.vertical-media {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  transform: translateY(-50%);
+  font-size: 150px;
+  font-family: ab-kotodama-l, sans-serif;
+  color: #fff;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  opacity: 0.8;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  user-select: none;
+  pointer-events: none;
+  transition: opacity 0.3s, right 0.3s;
+  z-index: 1000;
+}
 #design { background: url('./assets/DESIGN.jpg') center/cover no-repeat; }
 #humanities { background: url('./assets/HUMANITIES.jpg') center/cover no-repeat; }
 #manga { background: url('./assets/MANGA.jpg') center/cover no-repeat; }

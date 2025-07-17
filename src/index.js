@@ -172,4 +172,160 @@ window.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+
+  // ART 竖排大字随网页滚动自动上下滑动，字体为白色
+  const artSection = document.getElementById('art');
+  const verticalArt = artSection ? artSection.querySelector('.vertical-art') : null;
+  if (artSection && verticalArt) {
+    verticalArt.style.color = '#fff'; // 白色字体
+
+    function updateVerticalArtOnScroll() {
+      const rect = artSection.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      // 计算 art 区域中心点在视口中的相对位置
+      const centerY = rect.top + rect.height / 1.4;
+      const percent = (centerY - 0) / windowHeight; // 0=顶部，1=底部
+
+      // 让 ART 在 art 区域进入视口时上下滑动，最大偏移 320px
+      const maxOffset = 450;
+      // percent=0时在顶部，percent=1时在底部
+      const offset = -(percent - 0.5) * 2 * maxOffset; // 负号反转方向
+      verticalArt.style.top = `calc(50% + ${offset}px)`;
+      verticalArt.style.transform = `translateY(-50%)`;
+    }
+
+    window.addEventListener('scroll', updateVerticalArtOnScroll);
+    window.addEventListener('resize', updateVerticalArtOnScroll);
+    updateVerticalArtOnScroll();
+  }
+
+  // DESIGN 竖排大字随网页滚动自动上下滑动，字体为白色，仅在design区域进入视口时才滑动和显示
+  const designSection = document.getElementById('design');
+  const verticalDesign = designSection ? designSection.querySelector('.vertical-design') : null;
+  if (designSection && verticalDesign) {
+    verticalDesign.style.color = '#fff'; // 白色字体
+    verticalDesign.style.opacity = 0; // 初始隐藏
+
+    function updateVerticalDesignOnScroll() {
+      const rect = designSection.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      // 判断design区域是否进入视口
+      const isInView = rect.bottom > 0 && rect.top < windowHeight;
+      if (isInView) {
+        // 计算 design 区域中心点在视口中的相对位置
+        const centerY = rect.top + rect.height / 2;
+        const percent = (centerY - 0) / windowHeight; // 0=顶部，1=底部
+        // 让 DESIGN 在 design 区域进入视口时上下滑动，最大偏移 320px
+        const maxOffset = 450;
+        const offset = -(percent - 0.5) * 2 * maxOffset;
+        verticalDesign.style.top = `calc(50% + ${offset}px)`;
+        verticalDesign.style.transform = `translateY(-50%)`;
+        verticalDesign.style.opacity = 1;
+      } else {
+        // 不在视口时隐藏或淡出
+        verticalDesign.style.opacity = 0;
+      }
+    }
+
+    window.addEventListener('scroll', updateVerticalDesignOnScroll);
+    window.addEventListener('resize', updateVerticalDesignOnScroll);
+    updateVerticalDesignOnScroll();
+  }
+
+  const humanitiesSection = document.getElementById('humanities');
+const verticalHumanities = humanitiesSection ? humanitiesSection.querySelector('.vertical-humanities') : null;
+if (humanitiesSection && verticalHumanities) {
+  verticalHumanities.style.color = '#fff'; // 白色字体
+  verticalHumanities.style.opacity = 0; // 初始隐藏
+
+  function updateVerticalHumanitiesOnScroll() {
+    const rect = humanitiesSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    // 判断humanities区域是否进入视口
+    const isInView = rect.bottom > 0 && rect.top < windowHeight;
+    if (isInView) {
+      // 计算 humanities 区域中心点在视口中的相对位置
+      const centerY = rect.top + rect.height / 2;
+      const percent = (centerY - 0) / windowHeight; // 0=顶部，1=底部
+      // 让 HUMANITIES 在 humanities 区域进入视口时上下滑动，最大偏移 320px
+      const maxOffset = 650;
+      const offset = -(percent - 0.5) * 2 * maxOffset;
+      verticalHumanities.style.top = `calc(50% + ${offset}px)`;
+      verticalHumanities.style.transform = `translateY(-50%)`;
+      verticalHumanities.style.opacity = 1;
+    } else {
+      // 不在视口时隐藏或淡出
+      verticalHumanities.style.opacity = 0;
+    }
+  }
+
+  window.addEventListener('scroll', updateVerticalHumanitiesOnScroll);
+  window.addEventListener('resize', updateVerticalHumanitiesOnScroll);
+  updateVerticalHumanitiesOnScroll();
+  }
+
+  const mangaSection = document.getElementById('manga');
+  const verticalManga = mangaSection ? mangaSection.querySelector('.vertical-manga') : null;
+  if (mangaSection && verticalManga) {
+    verticalManga.style.color = '#fff'; // 白色字体
+    verticalManga.style.opacity = 0; // 初始隐藏
+
+    function updateVerticalMangaOnScroll() {
+      const rect = mangaSection.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      // 判断manga区域是否进入视口
+      const isInView = rect.bottom > 0 && rect.top < windowHeight;
+      if (isInView) {
+        // 计算 manga 区域中心点在视口中的相对位置
+        const centerY = rect.top + rect.height / 2;
+        const percent = (centerY - 0) / windowHeight; // 0=顶部，1=底部
+        // 让 MANGA 在 manga 区域进入视口时上下滑动，最大偏移 320px
+        const maxOffset = 410;
+        const offset = -(percent - 0.5) * 2 * maxOffset;
+        verticalManga.style.top = `calc(50% + ${offset}px)`;
+        verticalManga.style.transform = `translateY(-50%)`;
+        verticalManga.style.opacity = 1;
+      } else {
+        // 不在视口时隐藏或淡出
+        verticalManga.style.opacity = 0;
+      }
+    }
+
+    window.addEventListener('scroll', updateVerticalMangaOnScroll);
+    window.addEventListener('resize', updateVerticalMangaOnScroll);
+    updateVerticalMangaOnScroll();
+  }
+
+  const mediaSection = document.getElementById('media');
+  const verticalMedia = mediaSection ? mediaSection.querySelector('.vertical-media') : null;
+  if (mediaSection && verticalMedia) {
+    verticalMedia.style.color = '#fff'; // 白色字体
+    verticalMedia.style.opacity = 0; // 初始隐藏
+
+    function updateVerticalMediaOnScroll() {
+      const rect = mediaSection.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      // 判断media区域是否进入视口
+      const isInView = rect.bottom > 0 && rect.top < windowHeight;
+      if (isInView) {
+        // 计算 media 区域中心点在视口中的相对位置
+        const centerY = rect.top + rect.height / 2;
+        const percent = (centerY - 0) / windowHeight; // 0=顶部，1=底部
+        // 让 DESIGN 在 design 区域进入视口时上下滑动，最大偏移 320px
+        const maxOffset = 450;
+        const offset = -(percent - 0.5) * 2 * maxOffset;
+        verticalMedia.style.top = `calc(50% + ${offset}px)`;
+        verticalMedia.style.transform = `translateY(-50%)`;
+        verticalMedia.style.opacity = 1;
+      } else {
+        // 不在视口时隐藏或淡出
+        verticalMedia.style.opacity = 0;
+      }
+    }
+
+    window.addEventListener('scroll', updateVerticalMediaOnScroll);
+    window.addEventListener('resize', updateVerticalMediaOnScroll);
+    updateVerticalMediaOnScroll();
+  }
 });
