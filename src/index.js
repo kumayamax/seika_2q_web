@@ -184,11 +184,11 @@ window.addEventListener('DOMContentLoaded', function() {
       const windowHeight = window.innerHeight || document.documentElement.clientHeight;
 
       // 计算 art 区域中心点在视口中的相对位置
-      const centerY = rect.top + rect.height / 1.4;
+      const centerY = rect.top + rect.height / 2;
       const percent = (centerY - 0) / windowHeight; // 0=顶部，1=底部
 
       // 让 ART 在 art 区域进入视口时上下滑动，最大偏移 320px
-      const maxOffset = 450;
+      const maxOffset = 330;
       // percent=0时在顶部，percent=1时在底部
       const offset = -(percent - 0.5) * 2 * maxOffset; // 负号反转方向
       verticalArt.style.top = `calc(50% + ${offset}px)`;
